@@ -7,11 +7,12 @@ import _StyledNativeComponent from '../models/StyledNativeComponent';
 import ThemeProvider, { ThemeConsumer, ThemeContext } from '../models/ThemeProvider';
 import { WebTarget } from '../types';
 import isStyledComponent from '../utils/isStyledComponent';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const reactNative = require('react-native');
 
-const InlineStyle = _InlineStyle(reactNative.StyleSheet);
+const InlineStyle = _InlineStyle(EStyleSheet);
 const StyledNativeComponent = _StyledNativeComponent(InlineStyle);
 const styled = (tag: WebTarget) => constructWithOptions(StyledNativeComponent, tag);
 
